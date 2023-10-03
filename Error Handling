@@ -1,0 +1,13 @@
+
+def elastic_collision(masses, velocities, angles):
+    # Check if input lists have the same length.
+    if len(masses) != len(velocities) or len(masses) != len(angles):
+        raise ValueError("Input lists must have the same length.")
+
+    # Check if masses are positive.
+    if any(m <= 0 for m in masses):
+        raise ValueError("Masses must be positive.")
+
+    # Check if angles are within a valid range.
+    if any(angle < 0 or angle >= 360 for angle in angles):
+        raise ValueError("Angles must be in the range [0, 360) degrees.")
